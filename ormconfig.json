@@ -1,0 +1,19 @@
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
+@Module({
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 8080,
+      username: 'obaflour',
+      password: 'Ilovemywife95',
+      database: 'obaflour',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true, // This option automatically creates database tables based on your entities. Set to false in production.
+    }),
+  ],
+})
+export class AppModule {}
+
